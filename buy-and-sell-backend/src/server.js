@@ -2,8 +2,11 @@ import Hapi, { server } from '@hapi/hapi'
 import routes from './routes'
 import { db } from './database'
 import * as admin from 'firebase-admin'
+import credentials from '../credentials.json'
 
-admin.initializeApp();
+admin.initializeApp({
+    credentials: admin.credential.cert(credentials),
+});
 
 let server;
 
