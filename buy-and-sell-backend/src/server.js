@@ -5,10 +5,10 @@ import * as admin from 'firebase-admin'
 import credentials from '../credentials.json'
 
 admin.initializeApp({
-    credentials: admin.credential.cert(credentials),
+    credential: admin.credential.cert(credentials),
 });
 
-let server;
+// let server;
 
 const start = async() => {
     const server = Hapi.server({

@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app'
+import firebase from 'firebase/app'
+import 'firebase/auth'
+
+//Google with their constant changes
+const { auth } = firebase;
 
 @Component({
   selector: 'app-root',
@@ -16,6 +20,10 @@ export class AppComponent {
   ) {  }
 
   signInClicked(): void {
-    this.auth.signInWithPopup(new auth.)
+    this.auth.signInWithPopup(new auth.GoogleAuthProvider())
+  }
+
+  signOutClicked(): void {
+    this.auth.signOut();
   }
 }
